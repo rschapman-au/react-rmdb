@@ -22,7 +22,7 @@ const Home = () => {
 
     if (error) return <div>Something went wrong...</div>;
 
-    return (
+    return (    
         <>
         {!searchTerm && state.results[0] ? (
         <HeroImage
