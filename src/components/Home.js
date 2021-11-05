@@ -32,11 +32,11 @@ const Home = () => {
         /> 
         ) : null }
         <SearchBar setSearchTerm={setSearchTerm}/>
-        <Grid header= {searchTerm ? 'Search Results' : 'Popular Movies'}>
+        <Grid header= {searchTerm ? 'Search Results' : 'Popular Movies'} gridWidth='200px'>
             {state.results.map(movie => (
                 <Thumb
                     key={movie.id}
-                    clickable
+                    clickable={true}
                     image={
                         movie.poster_path
                         ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path

@@ -2,10 +2,10 @@ import React from "react";
 //Styles
 import { Wrapper, Content } from "./Grid.styles";
 
-const Grid = ({ header, children }) => (
+const Grid = ({ header, children, gridWidth }) => (
     <Wrapper>
         <h1>{header}</h1>
-        <Content>{children}</Content>
+        <Content gridWidth={gridWidth}>{children}</Content>
     </Wrapper>
 )
 

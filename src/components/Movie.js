@@ -30,7 +30,7 @@ const Movie = () => {
             <BreadCrumb movieTitle={ movie.original_title }/>
             <MovieInfo movie={movie}/>
             <MovieInfoBar time={movie.runtime} budget={movie.budget} revenue={movie.revenue}/>
-            <Grid header='Actors'>
+            <Grid header='Actors' gridWidth='150px'>
                 {movie.actors.map(actor => (
                     <Actor 
                     key={actor.credit_id}
