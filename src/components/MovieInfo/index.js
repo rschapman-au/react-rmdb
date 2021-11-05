@@ -5,12 +5,12 @@ import Thumb from "../Thumb";
 
 //Styles
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config"; 
+import { Wrapper, Content, Text } from "./MovieInfo.styles";
 
 //Image
 import NoImage from "../../images/no_image.jpg";
 
-//Styles 
-import { Wrapper, Content, Text } from "./MovieInfo.styles";
+
 
 
 const MovieInfo = ({ movie }) => (
