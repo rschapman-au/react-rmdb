@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 // API
 import API from "../API";
 
+//Helpers
+import { isPersistedState } from "../helpers";
+
 const initialState = {
     page: 0,
     results: [],
@@ -38,6 +41,16 @@ export const useHomeFetch = () => {
 
     // Initial and Search
     useEffect(() => {
+        if (!searchTerm) {
+            const sessionState = isPersistedState('homeState');
+
+            if (sessionState) {
+                console.log('Getting info from sessionStorage');
+                setState (sessionState);
+                return;
+            }
+        }
+        console.log('Getting info from API');
         setState(initialState);
         fetchMovies(1, searchTerm);
     }, [searchTerm]);
@@ -51,6 +64,11 @@ export const useHomeFetch = () => {
         setIsLoadingMore(false);
         
     }, [isLoadingMore, state.page, searchTerm])
+
+    //Write movies to session storage
+    useEffect(()=> {
+        if (!searchTerm) sessionStorage.setItem('homeState', JSON.stringify(state))
+    },[searchTerm, state])
 
     return {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore};
 };

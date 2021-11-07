@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { useRoutes } from "react-router";
 import API from "../API";
 
+//Helpers
+import { isPersistedState } from "../helpers";
+
 export const useMovieFetch = movieId => {
     const [state, setState] = useState({});
     const [loading, setLoading] = useState(true);
@@ -32,9 +35,26 @@ export const useMovieFetch = movieId => {
                 setError(true);
             }
 
-        }
+        };
+
+        const sessionState = isPersistedState(movieId);
+        if (sessionState) {
+            setState(sessionState);
+            setLoading(false); 
+            console.log('Getting individual movie from sessionState');
+            return;
+        };
+
         fetchMovie();
+        console.log('Getting individual movie from API');
+
     }, [movieId])
+
+
+    //Write to session storage for individual movie
+    useEffect(() => {
+        sessionStorage.setItem(movieId, JSON.stringify(state));
+    }, [movieId, state]);
 
     return { state, loading, error };
 }
