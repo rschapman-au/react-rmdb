@@ -13,7 +13,7 @@ import NoImage from "../../images/no_image.jpg";
 
 
 
-
+//TODO: Make the height of the wrapper and the thumb consistent
 const MovieInfo = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>

@@ -42,5 +42,6 @@ const SearchBar = ({ setSearchTerm }) => {
 
 SearchBar.propTypes = {
     callback: PropTypes.func
-}
+};
+
 export default SearchBar;
