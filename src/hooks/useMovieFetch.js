@@ -1,6 +1,5 @@
-import userEvent from "@testing-library/user-event";
 import { useState, useEffect } from "react";
-import { useRoutes } from "react-router";
+//import { useRoutes } from "react-router";
 import API from "../API";
 
 //Helpers

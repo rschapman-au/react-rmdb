@@ -1,4 +1,4 @@
-import { symbol } from "prop-types";
+//import { symbol } from "prop-types";
 import styled from "styled-components";
 
 export const Spinner = styled.div`
