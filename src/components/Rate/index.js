@@ -1,12 +1,11 @@
 import React, {useState, useContext} from "react";
 import { Wrapper, Content } from "./Rate.styles";
 import Button  from "../Button"
-import API from "../../API"
+import API from "../../src/API"
 
 //Context
-import { Context } from "../../context";
+import { Context } from "../../src/context";
 
-//Types
 //Types
 import { MovieState } from "../../hooks/useMovieFetch";
 
