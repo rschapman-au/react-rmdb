@@ -6,12 +6,6 @@ import API from "../../API"
 //Context
 import { Context } from "../../context";
 
-//Types
-import { MovieState } from "../../hooks/useMovieFetch";
-
-
-
-
 const Rate = ({ movie }) => {
     const [value, setValue] = useState(5);
     const [user] = useContext(Context);

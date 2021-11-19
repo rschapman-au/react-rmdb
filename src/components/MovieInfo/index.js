@@ -15,8 +15,6 @@ import NoImage from "../../images/no_image.jpg";
 //Context
 import { Context } from "../../context";
 
-//Types
-import { MovieState } from "../../hooks/useMovieFetch";
 
 
 //TODO: Make the height of the wrapper and the thumb consistent
