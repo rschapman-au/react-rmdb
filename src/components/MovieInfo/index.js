@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 //Components
 import Thumb from "../Thumb";
+import Rate from "../Rate";
 
 //Styles
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config"; 
@@ -11,10 +12,18 @@ import { Wrapper, Content, Text } from "./MovieInfo.styles";
 //Image
 import NoImage from "../../images/no_image.jpg";
 
+//Context
+import { Context } from "../../context";
+
+//Types
+import { MovieState } from "../../hooks/useMovieFetch";
 
 
 //TODO: Make the height of the wrapper and the thumb consistent
-const MovieInfo = ({ movie }) => (
+const MovieInfo = ({ movie }) => {
+    //const [user] = useContext(Context);
+
+return (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumb 
@@ -42,14 +51,15 @@ const MovieInfo = ({ movie }) => (
                     </div>
                 
                 </div>
-
+  
             </Text>
         </Content>
     </Wrapper>
 
-);
+)};
 
 MovieInfo.propTypes = {
     movie: PropTypes.object
 }
+
 export default MovieInfo;
