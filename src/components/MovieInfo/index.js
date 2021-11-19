@@ -21,7 +21,7 @@ import { MovieState } from "../../hooks/useMovieFetch";
 
 //TODO: Make the height of the wrapper and the thumb consistent
 const MovieInfo = ({ movie }) => {
-    //const [user] = useContext(Context);
+    const [user] = useContext(Context);
 
 return (
     <Wrapper backdrop={movie.backdrop_path}>
@@ -51,7 +51,12 @@ return (
                     </div>
                 
                 </div>
-  
+                {user &&  (
+                    <div>
+                        <p>Rate Movie</p>
+                        <Rate movie={movie} />
+                    </div>   
+                    )}    
             </Text>
         </Content>
     </Wrapper>
