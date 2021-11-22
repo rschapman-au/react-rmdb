@@ -50,8 +50,9 @@ return (
                 
                 </div>
                 {user &&  (
-                    <div>
-                        <p>Rate Movie</p>
+                    <div className="rate">
+                        <br/>
+                        <h3>RATE MOVIE</h3>
                         <Rate movie={movie} />
                     </div>   
                     )}    

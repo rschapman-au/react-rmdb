@@ -27,7 +27,7 @@ return (
                 </Link>
             )
             }
-            <TMDBLogoImg src={TMDBLogo} alt="tmdb-logo"/>
+
         </Content>
     </Wrapper>
 )};

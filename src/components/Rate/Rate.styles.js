@@ -10,11 +10,8 @@ export const Content = styled.div`
     width: 100%auto;
     padding: 20px 40px;
     overflow: hidden;
+    max-width: var(--maxWidth);
 
-    .slider-score {
-        display: flex;
-        justify-content: flex-start;
-    }
         
     .slider {
         display: flex;
@@ -26,7 +23,7 @@ export const Content = styled.div`
         border: 0;
         border-radius: 250px;
         width: 350px;
-        max-width: 100%;
+        
         margin: 24px 0 16px;
         transition: box-shadow 0.2s ease-in-out;
         background-color: var(--darkGrey);
@@ -51,11 +48,16 @@ export const Content = styled.div`
                 position: relative;
                 // top: 1px;
             }
-            :active::-webkit-slider-thumb {
-                background: var(--lightGrey);
-                box-shadow: 0px 0 0 2px lightskyblue;
-                //box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
-            }
+        :active::-webkit-slider-thumb {
+            background: var(--lightGrey);
+            box-shadow: 0px 0 0 2px lightskyblue;
+            //box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
+        }
+        @media screen and (max-width: 768px) {
+            width: 350px;
+        }
+
+
     }
     }
 

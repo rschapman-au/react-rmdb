@@ -18,7 +18,7 @@ const Rate = ({ movie }) => {
     return (
         <Wrapper>
             <Content>
-                <div className = 'slider-score'>
+               
                     <div className = 'slider'>
                     <input 
                         type='range'
@@ -26,15 +26,10 @@ const Rate = ({ movie }) => {
                         max='10'
                         value={value}
                         onChange={e => setValue(Number(e.currentTarget.value))}
+                        
                     /> 
-
+                    <p>{value}</p>
                     </div>
-                    <div className ='rating-score'>
-                        <p>{value}</p>
-                    </div>
-                 
-                </div>
-                
                 <div>
                     <Button text='Rate' callback = {()=>handleRating(value)}/>
                 </div>
