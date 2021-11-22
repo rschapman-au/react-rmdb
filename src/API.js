@@ -30,6 +30,11 @@ const apiSettings = {
     const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
   },
+  fetchActor: async personId => {
+    const actorendpoint = `${API_URL}person/${personId}?api_key=${API_KEY}`;
+    return await (await fetch(actorendpoint)).json();
+  },
+
   // Login to TMDB
   getRequestToken: async () => {
     const reqToken = await (await fetch(REQUEST_TOKEN_URL)).json();
