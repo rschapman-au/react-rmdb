@@ -6,7 +6,8 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 
 //Components
 import Spinner from './Spinner';
-import Actor from './Actor';
+import BreadCrumb from './BreadCrumb';
+import Thumb from './Thumb';
 
 //Hook
 import { useActorFetch } from '../hooks/useActorFetch';
@@ -14,7 +15,7 @@ import { useActorFetch } from '../hooks/useActorFetch';
 //Image
 import NoImage from "../images/no_image.jpg";
 
-const ActorInfo = () => {
+const ActorProfile = () => {
     const { actorId } = useParams();
     const { state: actor, loading, error } = useActorFetch(actorId)
 
@@ -24,15 +25,11 @@ const ActorInfo = () => {
     return (
 
         <>
-            <Actor 
-            key={actor.credit_id}
-            name={actor.name}
-            character={actor.character}
-            imageUrl={
-                actor.profile_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                : NoImage
-            }
-            actorId={actor.id}
+            <BreadCrumb movieTitle={actor.name}/>
+            <Thumb 
+            image={actor.profile_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+            : NoImage}
+            clickable={false}
             />
             <p> {actor.biography} </p>
             <p> {actor.birthday}</p>
@@ -42,4 +39,4 @@ const ActorInfo = () => {
     )
 
 }
-export default ActorInfo;
+export default ActorProfile;

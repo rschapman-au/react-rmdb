@@ -9,7 +9,7 @@ import Home from './components/Home'
 import Movie from './components/Movie';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
-import ActorInfo from './components/ActorInfo';
+import ActorProfile from './components/ActorProfile';
 
 //Context
 import UserProvider from './context';
@@ -27,7 +27,7 @@ const App = () => (
             <Route path='/' element={ <Home /> } />
             <Route path='/movie/:movieId' element={<Movie />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/person/:actorId' element={<ActorInfo />}/>
+            <Route path='/person/:actorId' element={<ActorProfile />}/>
             <route path='/*' element={<NotFound/>}/>
           </Routes>
           <GlobalStyle />
