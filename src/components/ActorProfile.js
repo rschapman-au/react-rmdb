@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-//Config
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 
 //Components
 import Spinner from './Spinner';
@@ -12,8 +10,6 @@ import ActorInfo from './ActorInfo';
 //Hook
 import { useActorFetch } from '../hooks/useActorFetch';
 
-//Image
-import NoImage from "../images/no_image.jpg";
 
 const ActorProfile = () => {
     const { actorId } = useParams();
