@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-//Components
-
+//Helpers
+import { calcAge } from "../../helpers";
 //Styles
 import { Wrapper, Content, Text } from "./ActorInfo.styles";
 
@@ -21,7 +21,7 @@ return (
                 <div className="rating-directors">
                     <div>
                         <h3>AGE</h3>
-                        <div className="score">{actor.gender}</div>
+                        <div className="score">{calcAge(actor.birthday)}</div>
                     </div>
                     <div className="director">
                         <h3>DATE OF BIRTH</h3>

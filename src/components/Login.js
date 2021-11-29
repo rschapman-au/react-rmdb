@@ -27,7 +27,7 @@ const Login = () => {
             const sessionId = await API.authenticate(requestToken, username, password);
 
             console.log(sessionId);
-            setUser({ sessionId: sessionId.session_id, username});
+            setUser({ sessionId: sessionId.session_id, username});  
 
             navigate('/');
 

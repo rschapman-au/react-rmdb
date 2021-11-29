@@ -4,6 +4,15 @@ export const calcTime = time => {
   const mins = time % 60;
   return `${hours}h ${mins}m`;
 };
+// Calculate Age
+export const calcAge = dob => {
+  const dateOfBirth = Date.parse(dob)
+  const today = new Date(); 
+  const age = Math.floor((today - dateOfBirth) / 31536000000);
+
+  return `${age}`;
+};
+
 // Convert a number to money formatting
 export const convertMoney = money => {
   const formatter = new Intl.NumberFormat('en-US', {
@@ -13,6 +22,8 @@ export const convertMoney = money => {
   });
   return formatter.format(money);
 };
+
+
 
 export const isPersistedState = stateName =>{
   const sessionState = sessionStorage.getItem(stateName);
