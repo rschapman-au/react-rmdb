@@ -6,6 +6,7 @@ export const calcTime = time => {
 };
 // Calculate Age
 export const calcAge = dob => {
+  
   const dateOfBirth = Date.parse(dob)
   const today = new Date(); 
   const age = Math.floor((today - dateOfBirth) / 31536000000);
