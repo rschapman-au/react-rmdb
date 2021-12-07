@@ -6,12 +6,17 @@ export const calcTime = time => {
 };
 // Calculate Age
 export const calcAge = dob => {
-  
-  const dateOfBirth = Date.parse(dob)
-  const today = new Date(); 
-  const age = Math.floor((today - dateOfBirth) / 31536000000);
+  if (dob!=null) {
+    const dateOfBirth = Date.parse(dob)
+    const today = new Date(); 
+    const age = Math.floor((today - dateOfBirth) / 31536000000);
+    return `${age}`;
 
-  return `${age}`;
+   } else {
+   return '?';
+  }
+
+
 };
 
 // Convert a number to money formatting
